@@ -74,7 +74,7 @@ write.table(apr18_data, "SupplyData_Apr18_DAY.txt", row.names = FALSE )
 may18_data<-filter(data, month == 5 & year == 2018)
 
 #write to text
-write.table(may18_data, "SupplyData_May18_DAY", row.names = FALSE )
+write.table(may18_data, "SupplyData_May18_DAY.txt", row.names = FALSE )
 
 
 
@@ -84,7 +84,7 @@ write.table(may18_data, "SupplyData_May18_DAY", row.names = FALSE )
 jun18_data<-filter(data, month == 6 & year == 2018)
 
 #write to text
-write.table(jun18_data, "SupplyData_Jun18_DAY", row.names = FALSE )
+write.table(jun18_data, "SupplyData_Jun18_DAY.txt", row.names = FALSE )
 
 
 
@@ -94,7 +94,7 @@ write.table(jun18_data, "SupplyData_Jun18_DAY", row.names = FALSE )
 jul18_data<-filter(data, month == 7 & year == 2018)
 
 #write to text
-write.table(jul18_data, "SupplyData_Jul18_DAY", row.names = FALSE )
+write.table(jul18_data, "SupplyData_Jul18_DAY.txt", row.names = FALSE )
 
 
 
@@ -104,7 +104,7 @@ write.table(jul18_data, "SupplyData_Jul18_DAY", row.names = FALSE )
 aug18_data<-filter(data, month == 8 & year == 2018)
 
 #write to text
-write.table(aug18_data, "SupplyData_Aug18_DAY", row.names = FALSE )
+write.table(aug18_data, "SupplyData_Aug18_DAY.txt", row.names = FALSE )
 
 
 
