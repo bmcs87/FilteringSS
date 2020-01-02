@@ -154,7 +154,7 @@ write.table(dec18_data, "SupplyData_Dec18_DAY.txt", row.names = FALSE )
 jan19_data<-filter(data, month == 1 & year == 2019)
 
 #write to text
-write.table(jan19_data, "SupplyData_jan19_DAY.txt", row.names = FALSE )
+write.table(jan19_data, "SupplyData_Jan19_DAY.txt", row.names = FALSE )
 
 
 ###### February 2019 #####
