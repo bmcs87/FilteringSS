@@ -14,7 +14,7 @@ setwd("D:/IHS Sales & Supply Dashboard/Supply_Files/Daily Text Files")
 
 ########### Main Instructions #############
 
-#read data in using fread from data.table package 
+#read data 
 data <- read.delim("SupplyData_Jan18_Feb19_DAY.txt")
 
 #use lubridate package to create a date field called date_updated
@@ -164,3 +164,6 @@ feb19_data<-filter(data_condensed, month == 2 & year == 2019)
 #write to text
 write.table(feb19_data, "SupplyData_Feb19_DAY", row.names = FALSE )
 
+
+
+#################### WILL NEED TO DELETE THE MONTH AND YEAR COLUMNS IN POWER BI !!!!!!!!!!!!!!!  ##################
