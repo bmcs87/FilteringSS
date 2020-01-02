@@ -1,12 +1,13 @@
 #Install Packages
+install.packages("data.table")
 install.packages("tidyverse")
 install.packages("lubridate")
-install.packages("data.table")
 
 #call packages
+library(data.table)
 library(tidyverse)
 library(lubridate)
-library(data.table)
+
 
 #set working directory
 setwd("D:/IHS Sales & Supply Dashboard/Supply_Files/Daily Text Files")
@@ -15,7 +16,7 @@ setwd("D:/IHS Sales & Supply Dashboard/Supply_Files/Daily Text Files")
 ########### Main Instructions #############
 
 #read data 
-data <- read.delim("SupplyData_Jan18_Feb19_DAY.txt")
+data <- fread("SupplyData_Jan18_Feb19_DAY.txt")
 
 #use lubridate package to create a date field called date_updated
 data$date_updated<-lubridate::ymd_hms(data$Date)
@@ -30,47 +31,47 @@ data$year <- year(data$date_updated)
 ###### January 2018 #####
 
 #filter based on month using the month column 
-jan18_data<-filter(data_condensed, month == 1 & year == 2018)
+jan18_data<-filter(data, month == 1 & year == 2018)
 
 #write to text
-write.table(jan18_data, "SupplyData_Jan18_DAY", row.names = FALSE )
+write.table(jan18_data, "SupplyData_Jan18_DAY.txt", row.names = FALSE )
 
 
 
 ###### February 2018 #####
 
 #filter based on month using the month column 
-feb18_data<-filter(data_condensed, month == 2 & year == 2018)
+feb18_data<-filter(data, month == 2 & year == 2018)
 
 #write to text
-write.table(feb18_data, "SupplyData_Feb18_DAY", row.names = FALSE )
+write.table(feb18_data, "SupplyData_Feb18_DAY.txt", row.names = FALSE )
 
 
 
 ###### March 2018 #####
 
 #filter based on month using the month column 
-mar18_data<-filter(data_condensed, month == 3 & year == 2018)
+mar18_data<-filter(data, month == 3 & year == 2018)
 
 #write to text
-write.table(mar18_data, "SupplyData_Mar18_DAY", row.names = FALSE )
+write.table(mar18_data, "SupplyData_Mar18_DAY.txt", row.names = FALSE )
 
 
 
 ###### April 2018 #####
 
 #filter based on month using the month column 
-apr18_data<-filter(data_condensed, month == 4 & year == 2018)
+apr18_data<-filter(data, month == 4 & year == 2018)
 
 #write to text
-write.table(apr18_data, "SupplyData_Apr18_DAY", row.names = FALSE )
+write.table(apr18_data, "SupplyData_Apr18_DAY.txt", row.names = FALSE )
 
 
 
 ###### May 2018 #####
 
 #filter based on month using the month column 
-may18_data<-filter(data_condensed, month == 5 & year == 2018)
+may18_data<-filter(data, month == 5 & year == 2018)
 
 #write to text
 write.table(may18_data, "SupplyData_May18_DAY", row.names = FALSE )
@@ -80,7 +81,7 @@ write.table(may18_data, "SupplyData_May18_DAY", row.names = FALSE )
 ###### June 2018 #####
 
 #filter based on month using the month column 
-jun18_data<-filter(data_condensed, month == 6 & year == 2018)
+jun18_data<-filter(data, month == 6 & year == 2018)
 
 #write to text
 write.table(jun18_data, "SupplyData_Jun18_DAY", row.names = FALSE )
@@ -90,7 +91,7 @@ write.table(jun18_data, "SupplyData_Jun18_DAY", row.names = FALSE )
 ###### July 2018 #####
 
 #filter based on month using the month column 
-jul18_data<-filter(data_condensed, month == 7 & year == 2018)
+jul18_data<-filter(data, month == 7 & year == 2018)
 
 #write to text
 write.table(jul18_data, "SupplyData_Jul18_DAY", row.names = FALSE )
@@ -100,7 +101,7 @@ write.table(jul18_data, "SupplyData_Jul18_DAY", row.names = FALSE )
 ###### August 2018 #####
 
 #filter based on month using the month column 
-aug18_data<-filter(data_condensed, month == 8 & year == 2018)
+aug18_data<-filter(data, month == 8 & year == 2018)
 
 #write to text
 write.table(aug18_data, "SupplyData_Aug18_DAY", row.names = FALSE )
@@ -110,59 +111,59 @@ write.table(aug18_data, "SupplyData_Aug18_DAY", row.names = FALSE )
 ###### September 2018 #####
 
 #filter based on month using the month column 
-sep18_data<-filter(data_condensed, month == 9 & year == 2018)
+sep18_data<-filter(data, month == 9 & year == 2018)
 
 #write to text
-write.table(sep18_data, "SupplyData_Sep18_DAY", row.names = FALSE )
+write.table(sep18_data, "SupplyData_Sep18_DAY.txt", row.names = FALSE )
 
 
 
 ###### October 2018 #####
 
 #filter based on month using the month column 
-oct18_data<-filter(data_condensed, month == 10 & year == 2018)
+oct18_data<-filter(data, month == 10 & year == 2018)
 
 #write to text
-write.table(oct18_data, "SupplyData_Oct18_DAY", row.names = FALSE )
+write.table(oct18_data, "SupplyData_Oct18_DAY.txt", row.names = FALSE )
 
 
 
 ###### November 2018 #####
 
 #filter based on month using the month column 
-nov18_data<-filter(data_condensed, month == 11 & year == 2018)
+nov18_data<-filter(data, month == 11 & year == 2018)
 
 #write to text
-write.table(nov18_data, "SupplyData_Nov18_DAY", row.names = FALSE )
+write.table(nov18_data, "SupplyData_Nov18_DAY.txt", row.names = FALSE )
 
 
 
 ###### December 2018 #####
 
 #filter based on month using the month column 
-dec18_data<-filter(data_condensed, month == 12 & year == 2018)
+dec18_data<-filter(data, month == 12 & year == 2018)
 
 #write to text
-write.table(dec18_data, "SupplyData_Dec18_DAY", row.names = FALSE )
+write.table(dec18_data, "SupplyData_Dec18_DAY.txt", row.names = FALSE )
 
 
 
 ###### January 2019 #####
 
 #filter based on month using the month column 
-jan19_data<-filter(data_condensed, month == 1 & year == 2019)
+jan19_data<-filter(data, month == 1 & year == 2019)
 
 #write to text
-write.table(jan19_data, "SupplyData_jan19_DAY", row.names = FALSE )
+write.table(jan19_data, "SupplyData_jan19_DAY.txt", row.names = FALSE )
 
 
 ###### February 2019 #####
 
 #filter based on month using the month column 
-feb19_data<-filter(data_condensed, month == 2 & year == 2019)
+feb19_data<-filter(data, month == 2 & year == 2019)
 
 #write to text
-write.table(feb19_data, "SupplyData_Feb19_DAY", row.names = FALSE )
+write.table(feb19_data, "SupplyData_Feb19_DAY.txt", row.names = FALSE )
 
 
 
