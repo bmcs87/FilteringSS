@@ -1,0 +1,26 @@
+#install packages
+install.packages("tidyverse")
+install.packages("lubridate")
+install.packages("data.table")
+
+#call packages
+library(tidyverse)
+library(lubridate)
+library(data.table)
+
+#read data in using fread from data.table package 
+data<-fread("SupplyData_Jan18_Feb19_DAY.txt")
+#reduce file size 
+data_condensed<-head(data,100)
+#remove big data file 
+rm(data)
+#use lubridate package to create a date field called date_updated
+data_condensed$date_updated<-lubridate::ymd_hms(data_condensed$Date)
+#parse out the month and create a new field called month 
+data_condensed$month<-month(data_condensed$date_updated)
+
+#filter based on month using the month column 
+feb_data<-filter(data_condensed, month == 2 )
+
+#write to csv 
+write.csv(feb_data, "feb_data.csv", row.names = FALSE )
