@@ -1,0 +1,46 @@
+#Install Packages
+install.packages("data.table")
+install.packages("tidyverse")
+install.packages("lubridate")
+
+#call packages
+library(data.table)
+library(tidyverse)
+library(lubridate)
+
+
+#set working directory
+setwd("D:/IHS Sales & Supply Dashboard/Supply_Files/Daily Text Files")
+
+
+########### Main Instructions #############
+
+#read data 
+data <- fread("SupplyData_March19_April19_DAY.txt")
+
+#use lubridate package to create a date field called date_updated
+data$date_updated<-lubridate::ymd_hms(data$Date)
+
+#parse out the month and create a new field called month 
+data$month<-month(data$date_updated)
+
+#parse out the year and create a new field called year
+data$year <- year(data$date_updated)
+
+
+###### March 2019 #####
+
+#filter based on month using the month column 
+mar19_data<-filter(data, month == 3 & year == 2019)
+
+#write to text
+write.table(mar19_data, "SupplyData_Mar19_DAY.txt", row.names = FALSE )
+
+
+###### April 2019 #####
+
+#filter based on month using the month column 
+apr19_data<-filter(data, month == 4 & year == 2019)
+
+#write to text
+write.table(apr19_data, "SupplyData_Apr19_DAY.txt", row.names = FALSE )
