@@ -10,6 +10,7 @@ library(lubridate)
 
 
 #set working directory
+######## FILES WILL BE SAVED IN OLD FILES FOLDER AND WILL NEED TO BE MOVED LATER #############
 setwd("D:/IHS Sales & Supply Dashboard/Supply_Files/Daily Text Files/Old Files")
 
 
