@@ -10,13 +10,16 @@ library(lubridate)
 
 
 #set working directory
-setwd("D:/IHS Sales & Supply Dashboard/Supply_Files/Daily Text Files")
+setwd("D:/IHS Sales & Supply Dashboard/Supply_Files/Daily Text Files/Old Files")
 
 
 ########### Main Instructions #############
 
 #read data 
 data <- fread("SupplyData_March19_April19_DAY.txt")
+
+#change column headers because otherwise you have to do it manually later
+names(data) <- c("Date",	"Country",	"Network",	"Marketplace",	"DeviceType",	"Model",	"Make",	"OEM`Group",	"Segment", "Class",	"Fuel`Type",	"Align`To",	"CPO`Flag",	"SRPVs",	"BSRPVs",	"Impressions",	"Clicks",	"Revenue",	"AvgBid")
 
 #use lubridate package to create a date field called date_updated
 data$date_updated<-lubridate::ymd_hms(data$Date)
