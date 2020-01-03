@@ -2,7 +2,7 @@
 
 #set working directory
 setwd("D:/IHS Sales & Supply Dashboard/Supply_Files/Daily Text Files")
-
+ 
 #May 2019
 may19 <- read.delim("SupplyData_May19_DAY.txt") 
 names(may19) <- c("Date",	"Month", "Year", "Country",	"Network",	"Marketplace",	"DeviceType",	"Gender", "Model",	"Make",	"OEM`Group",	"Segment", "Class",	"Fuel`Type",	"Align`To",	"CPO`Flag",	"SRPVs",	"BSRPVs",	"Impressions",	"Clicks",	"Revenue",	"AvgBid")
