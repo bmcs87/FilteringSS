@@ -1,7 +1,7 @@
 ##### Supply Data 
 
 #set working directory
-setwd("D:/IHS Sales & Supply Dashboard/Supply_Files/Daily Text Files")
+setwd("D:/IHS Sales & Supply Dashboard/Supply_Files/Daily Text Files/Old Files")
  
 #May 2019
 may19 <- read.delim("SupplyData_May19_DAY.txt") 
@@ -10,7 +10,7 @@ may19[c(2, 3)] <- list(NULL)
 write.table(may19, "SupplyData_May19_DAY.txt", row.names = FALSE )
 
 #June 2019
-june19 <- read.delim("SupplyData_June19_DAY.txt") 
+june19 <- read.delim("SupplyData_Jun19_DAY.txt") 
 names(june19) <- c("Date",	"Month", "Year", "Country",	"Network",	"Marketplace",	"DeviceType",	"Gender", "Model",	"Make",	"OEM`Group",	"Segment", "Class",	"Fuel`Type",	"Align`To",	"CPO`Flag",	"SRPVs",	"BSRPVs",	"Impressions",	"Clicks",	"Revenue",	"AvgBid")
 june19[c(2, 3)] <- list(NULL)
 write.table(june19, "SupplyData_June19_DAY.txt", row.names = FALSE )
