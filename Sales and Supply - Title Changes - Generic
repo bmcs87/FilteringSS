@@ -2,7 +2,8 @@
 ##### Supply Data
 setwd("D:/IHS Sales & Supply Dashboard/Supply_Files/Daily Text Files")
 data <- read.delim("SupplyData_MMMYY_DAY.txt")> 
-names(data) <- c("Date",	"Country",	"Network",	"Marketplace",	"DeviceType",	"Gender", "Model",	"Make",	"OEM`Group",	"Segment", "Class",	"Fuel`Type",	"Align`To",	"CPO`Flag",	"SRPVs",	"BSRPVs",	"Impressions",	"Clicks",	"Revenue",	"AvgBid")
+names(data) <- c("Date",	"Month", "Year", "Country",	"Network",	"Marketplace",	"DeviceType",	"Gender", "Model",	"Make",	"OEM`Group",	"Segment", "Class",	"Fuel`Type",	"Align`To",	"CPO`Flag",	"SRPVs",	"BSRPVs",	"Impressions",	"Clicks",	"Revenue",	"AvgBid")
+data[c(2, 3)] <- list(NULL)
 write.table(data, "SupplyData_MMMYY_DAY.txt", row.names = FALSE )
 
 
