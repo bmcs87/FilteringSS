@@ -39,7 +39,7 @@ mar19_data<-filter(data, month == 3 & year == 2019)
 
 #delete unnecessary columns
 mar19_data[c(2, 3)] <- list(NULL)
-mar19_data[c(20:22)] <- list(NULL)
+mar19_data[c(21:23)] <- list(NULL)
 
 #write to text
 write.table(mar19_data, "SupplyData_Mar19_DAY.txt", row.names = FALSE )
@@ -52,7 +52,7 @@ apr19_data<-filter(data, month == 4 & year == 2019)
 
 #delete unnecessary columns
 apr19_data[c(2, 3)] <- list(NULL)
-apr19_data[c(20:22)] <- list(NULL)
+apr19_data[c(21:23)] <- list(NULL)
 
 #write to text
 write.table(apr19_data, "SupplyData_Apr19_DAY.txt", row.names = FALSE )
