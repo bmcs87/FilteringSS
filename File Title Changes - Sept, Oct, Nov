@@ -1,0 +1,26 @@
+##### Supply Data 
+#October 2019
+setwd("D:/IHS Sales & Supply Dashboard/Supply_Files/Daily Text Files")
+data <- read.delim("SupplyData_Oct2019_DAY.txt")> 
+names(data) <- c("Date",	"Country",	"Network",	"Marketplace",	"DeviceType",	"Gender", "Model",	"Make",	"OEM`Group",	"Segment", "Class",	"Fuel`Type",	"Align`To",	"CPO`Flag",	"SRPVs",	"BSRPVs",	"Impressions",	"Clicks",	"Revenue",	"AvgBid")
+write.table(data, "SupplyData_Oct2019_DAY.txt", row.names = FALSE )
+
+#November 2019
+setwd("D:/IHS Sales & Supply Dashboard/Supply_Files/Daily Text Files")
+data <- read.delim("SupplyData_Nov2019_DAY.txt")> 
+names(data) <- c("Date",	"Country",	"Network",	"Marketplace",	"DeviceType",	"Gender", "Model",	"Make",	"OEM`Group",	"Segment", "Class",	"Fuel`Type",	"Align`To",	"CPO`Flag",	"SRPVs",	"BSRPVs",	"Impressions",	"Clicks",	"Revenue",	"AvgBid")
+write.table(data, "SupplyData_Nov2019_DAY.txt", row.names = FALSE )
+
+
+#### Sales Data 
+#September 2019
+setwd("D:/IHS Sales & Supply Dashboard/IHS_Files (Sales Data)")
+data <- read.delim("US_MSFT_New_Used_Registrations_Sep2019_Nov2019.txt")> 
+names(data) <- c("DATA_TYPE", "REPORT_YEAR_MONTH", "ETHNIC", "AGE", "INCOME", "GENDER", "MAKE", "MODEL", "SERIES", "SUB_SERIES", "FUEL_CODE", "FUEL_DESCRIPTION", "ORIGIN", "ORIGIN_DESCRIPTION", "SEGMENT_CODE", "SEGMENT_NAME", "VIN_YEAR_MODEL", "DMA_CODE", "DMA_NAME", "STATE", "DEALER_CODE", "DEALER_NAME", "DEALER_ADDRESS", "DEALER_CITY", "DEALER_STATE", "DEALER_ZIP", "DEALER_DMA", "FRAN_CD", "FRAN_DESC", "CNT")
+write.table(data, "US_MSFT_New_Used_Registrations_Sep2019_Nov2019.txt", row.names = FALSE )
+
+#October 2019
+setwd("D:/IHS Sales & Supply Dashboard/IHS_Files (Sales Data)")
+data <- read.delim("US_MSFT_New_Used_Registrations_Oct2019_Dec2019.txt")> 
+names(data) <- c("DATA_TYPE", "REPORT_YEAR_MONTH", "ETHNIC", "AGE", "INCOME", "GENDER", "MAKE", "MODEL", "SERIES", "SUB_SERIES", "FUEL_CODE", "FUEL_DESCRIPTION", "ORIGIN", "ORIGIN_DESCRIPTION", "SEGMENT_CODE", "SEGMENT_NAME", "VIN_YEAR_MODEL", "DMA_CODE", "DMA_NAME", "STATE", "DEALER_CODE", "DEALER_NAME", "DEALER_ADDRESS", "DEALER_CITY", "DEALER_STATE", "DEALER_ZIP", "DEALER_DMA", "FRAN_CD", "FRAN_DESC", "CNT")
+write.table(data, "US_MSFT_New_Used_Registrations_Oct2019_Dec2019.txt", row.names = FALSE )
