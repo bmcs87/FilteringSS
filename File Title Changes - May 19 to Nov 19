@@ -1,18 +1,4 @@
 ##### Supply Data 
-#March 2019
-setwd("D:/IHS Sales & Supply Dashboard/Supply_Files/Daily Text Files")
-data <- read.delim("SupplyData_Mar19_DAY.txt") 
-names(data) <- c("Date",	"Month", "Year", "Country",	"Network",	"Marketplace",	"DeviceType",	"Gender", "Model",	"Make",	"OEM`Group",	"Segment", "Class",	"Fuel`Type",	"Align`To",	"CPO`Flag",	"SRPVs",	"BSRPVs",	"Impressions",	"Clicks",	"Revenue",	"AvgBid")
-data[c(2, 3)] <- list(NULL)
-write.table(data, "SupplyData_Mar19_DAY.txt", row.names = FALSE )
-
-#April 2019
-setwd("D:/IHS Sales & Supply Dashboard/Supply_Files/Daily Text Files")
-data <- read.delim("SupplyData_Apr19_DAY.txt") 
-names(data) <- c("Date",	"Month", "Year", "Country",	"Network",	"Marketplace",	"DeviceType",	"Gender", "Model",	"Make",	"OEM`Group",	"Segment", "Class",	"Fuel`Type",	"Align`To",	"CPO`Flag",	"SRPVs",	"BSRPVs",	"Impressions",	"Clicks",	"Revenue",	"AvgBid")
-data[c(2, 3)] <- list(NULL)
-write.table(data, "SupplyData_Apr19_DAY.txt", row.names = FALSE )
-
 #May 2019
 setwd("D:/IHS Sales & Supply Dashboard/Supply_Files/Daily Text Files")
 data <- read.delim("SupplyData_May19_DAY.txt") 
