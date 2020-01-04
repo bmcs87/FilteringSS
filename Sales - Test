@@ -2,12 +2,13 @@
 install.packages("data.table")
 install.packages("tidyverse")
 install.packages("lubridate")
+install.packages("zoo")
 
 #call packages
 library(data.table)
 library(tidyverse)
 library(lubridate)
-
+library(zoo)
 
 #set working directory
 setwd("D:/IHS Sales & Supply Dashboard/IHS_Files (Sales Data)")
@@ -28,13 +29,10 @@ rm(data)
 data_condensed$YearMonth <- sub("(-{4})(-*)", "\\1-\\2", data_condensed$REPORT_YEAR_MONTH)
 
 #identify Year and Month
-as.yearmon(data_condensed$YearMonth, "%Y-%m")
+data_condensed$YearMonth <- as.yearmon(data_condensed$YearMonth, "%Y-%m")
 
 #add date
-data_condensed$date_updated <- as.Date(paste0("01-", data_condensed$YearMonth),format = "%d-%Y-%m")
-
-#use lubridate package to create a date field called date_updated
-data_condensed$date_updated<-lubridate::dym(data_condensed$YearMonth)
+data_condensed$YearMonth <- as.Date(paste0("01-", data_condensed$YearMonth),format = "%d-%Y-%m")
 
 #parse out the month and create a new field called month 
 data_condensed$month<-month(data_condensed$YearMonth)
