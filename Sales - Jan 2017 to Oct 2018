@@ -1,0 +1,315 @@
+#Install Packages
+install.packages("data.table")
+install.packages("tidyverse")
+install.packages("lubridate")
+
+#call packages
+library(data.table)
+library(tidyverse)
+library(lubridate)
+
+
+#set working directory
+setwd("D:/IHS Sales & Supply Dashboard/IHS_Files (Sales Data)")
+
+
+########### Main Instructions #############
+
+#read data 
+data <- fread("US_MSFT_New_Used_Registrations_Oct2018_Dec2018.txt")
+
+#use lubridate package to create a date field called date_updated
+data$date_updated<-lubridate::ym(data$Report_Year_Month)
+
+#parse out the month and create a new field called month 
+data$month<-month(data$date_updated)
+
+#parse out the year and create a new field called year
+data$year <- year(data$date_updated)
+
+
+###### January 2017 #####
+
+#filter based on month using the month column 
+jan17_data<-filter(data, month == 1 & year == 2017)
+
+#remove new columns
+jan17_data[c(31:33)] <- list(NULL)
+
+#write to text
+write.table(jan17_data, "US_MSFT_New_Used_Registrations_Jan2017.txt", row.names = FALSE )
+
+
+
+###### February 2017 #####
+
+#filter based on month using the month column 
+feb17_data<-filter(data, month == 2 & year == 2017)
+
+#remove new columns
+feb17_data[c(31:33)] <- list(NULL)
+
+#write to text
+write.table(feb17_data, "US_MSFT_New_Used_Registrations_Feb2017.txt", row.names = FALSE )
+
+
+
+###### March 2017 #####
+
+#filter based on month using the month column 
+mar17_data<-filter(data, month == 3 & year == 2017)
+
+#remove new columns
+mar17_data[c(31:33)] <- list(NULL)
+
+#write to text
+write.table(mar17_data, "US_MSFT_New_Used_Registrations_Mar2017.txt", row.names = FALSE )
+
+
+
+###### April 2017 #####
+
+#filter based on month using the month column 
+apr17_data<-filter(data, month == 4 & year == 2017)
+
+#remove new columns
+apr17_data[c(31:33)] <- list(NULL)
+
+#write to text
+write.table(apr17_data, "US_MSFT_New_Used_Registrations_Apr2017.txt", row.names = FALSE )
+
+
+
+###### May 2017 #####
+
+#filter based on month using the month column 
+may17_data<-filter(data, month == 5 & year == 2017)
+
+#remove new columns
+may17_data[c(31:33)] <- list(NULL)
+
+#write to text
+write.table(may17_data, "US_MSFT_New_Used_Registrations_May2017.txt", row.names = FALSE )
+
+
+
+###### June 2017 #####
+
+#filter based on month using the month column 
+jun17_data<-filter(data, month == 6 & year == 2017)
+
+#remove new columns
+jun17_data[c(31:33)] <- list(NULL)
+
+#write to text
+write.table(jun17_data, "US_MSFT_New_Used_Registrations_Jun2017.txt", row.names = FALSE )
+
+
+
+###### July 2017 #####
+
+#filter based on month using the month column 
+jul17_data<-filter(data, month == 7 & year == 2017)
+
+#remove new columns
+jul17_data[c(31:33)] <- list(NULL)
+
+#write to text
+write.table(jul17_data, "US_MSFT_New_Used_Registrations_jul2017.txt", row.names = FALSE )
+
+
+
+###### August 2017 #####
+
+#filter based on month using the month column 
+aug17_data<-filter(data, month == 8 & year == 2017)
+
+#remove new columns
+aug17_data[c(31:33)] <- list(NULL)
+
+#write to text
+write.table(aug17_data, "US_MSFT_New_Used_Registrations_Aug2017.txt", row.names = FALSE )
+
+
+
+###### September 2017 #####
+
+#filter based on month using the month column 
+sep17_data<-filter(data, month == 9 & year == 2017)
+
+#remove new columns
+sep17_data[c(31:33)] <- list(NULL)
+
+#write to text
+write.table(sep17_data, "US_MSFT_New_Used_Registrations_Sep2017.txt", row.names = FALSE )
+
+
+
+###### October 2017 #####
+
+#filter based on month using the month column 
+oct17_data<-filter(data, month == 10 & year == 2017)
+
+#remove new columns
+oct17_data[c(31:33)] <- list(NULL)
+
+#write to text
+write.table(oct17_data, "US_MSFT_New_Used_Registrations_Oct2017.txt", row.names = FALSE )
+
+
+
+###### November 2017 #####
+
+#filter based on month using the month column 
+nov17_data<-filter(data, month == 11 & year == 2017)
+
+#remove new columns
+nov17_data[c(31:33)] <- list(NULL)
+
+#write to text
+write.table(nov17_data, "US_MSFT_New_Used_Registrations_Nov2017.txt", row.names = FALSE )
+
+
+
+###### December 2017 #####
+
+#filter based on month using the month column 
+dec17_data<-filter(data, month == 12 & year == 2017)
+
+#remove new columns
+dec17_data[c(31:33)] <- list(NULL)
+
+#write to text
+write.table(dec17_data, "US_MSFT_New_Used_Registrations_Dec2017.txt", row.names = FALSE )
+
+
+
+###### January 2018 #####
+
+#filter based on month using the month column 
+jan18_data<-filter(data, month == 1 & year == 2018)
+
+#remove new columns
+jan18_data[c(31:33)] <- list(NULL)
+
+#write to text
+write.table(jan18_data, "US_MSFT_New_Used_Registrations_Jan2018.txt", row.names = FALSE )
+
+
+
+###### February 2018 #####
+
+#filter based on month using the month column 
+feb18_data<-filter(data, month == 2 & year == 2018)
+
+#remove new columns
+feb18_data[c(31:33)] <- list(NULL)
+
+#write to text
+write.table(feb18_data, "US_MSFT_New_Used_Registrations_Feb2018.txt", row.names = FALSE )
+
+
+
+###### March 2018 #####
+
+#filter based on month using the month column 
+mar18_data<-filter(data, month == 3 & year == 2018)
+
+#remove new columns
+mar18_data[c(31:33)] <- list(NULL)
+
+#write to text
+write.table(mar18_data, "US_MSFT_New_Used_Registrations_Mar2018.txt", row.names = FALSE )
+
+
+
+###### April 2018 #####
+
+#filter based on month using the month column 
+apr18_data<-filter(data, month == 4 & year == 2018)
+
+#remove new columns
+apr18_data[c(31:33)] <- list(NULL)
+
+#write to text
+write.table(apr18_data, "US_MSFT_New_Used_Registrations_Apr2018.txt", row.names = FALSE )
+
+
+
+###### May 2018 #####
+
+#filter based on month using the month column 
+may18_data<-filter(data, month == 5 & year == 2018)
+
+#remove new columns
+may18_data[c(31:33)] <- list(NULL)
+
+#write to text
+write.table(may18_data, "US_MSFT_New_Used_Registrations_May2018.txt", row.names = FALSE )
+
+
+
+###### June 2018 #####
+
+#filter based on month using the month column 
+jun18_data<-filter(data, month == 6 & year == 2018)
+
+#remove new columns
+jun18_data[c(31:33)] <- list(NULL)
+
+#write to text
+write.table(jun18_data, "US_MSFT_New_Used_Registrations_Jun2018.txt", row.names = FALSE )
+
+
+
+###### July 2018 #####
+
+#filter based on month using the month column 
+jul18_data<-filter(data, month == 7 & year == 2018)
+
+#remove new columns
+jul18_data[c(31:33)] <- list(NULL)
+
+#write to text
+write.table(jul18_data, "US_MSFT_New_Used_Registrations_Jul2018.txt", row.names = FALSE )
+
+
+
+###### August 2018 #####
+
+#filter based on month using the month column 
+aug18_data<-filter(data, month == 8 & year == 2018)
+
+#remove new columns
+aug18_data[c(31:33)] <- list(NULL)
+
+#write to text
+write.table(aug18_data, "US_MSFT_New_Used_Registrations_Aug2018.txt", row.names = FALSE )
+
+
+
+###### September 2018 #####
+
+#filter based on month using the month column 
+sep18_data<-filter(data, month == 9 & year == 2018)
+
+#remove new columns
+sep18_data[c(31:33)] <- list(NULL)
+
+#write to text
+write.table(sep18_data, "US_MSFT_New_Used_Registrations_Sep2018.txt", row.names = FALSE )
+
+
+
+###### October 2018 #####
+
+#filter based on month using the month column 
+oct18_data<-filter(data, month == 10 & year == 2018)
+
+#remove new columns
+oct18_data[c(31:33)] <- list(NULL)
+
+#write to text
+write.table(oct18_data, "US_MSFT_New_Used_Registrations_Oct2018.txt", row.names = FALSE )
+
+
