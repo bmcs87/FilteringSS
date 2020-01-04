@@ -18,8 +18,17 @@ setwd("D:/IHS Sales & Supply Dashboard/IHS_Files (Sales Data)")
 #read data 
 data <- fread("US_MSFT_New_Used_Registrations_Oct2018_Dec2018.txt")
 
+#reduce file size 
+data_condensed<-head(data,100)
+
+#remove big data file 
+rm(data)
+
+#create new data field called YearMonth
+data$YearMonth <- paste(substring(data$Report_Year_Month, c(1,5), c(4,6)), collapse="-")
+
 #use lubridate package to create a date field called date_updated
-data$date_updated<-lubridate::ym(data$Report_Year_Month)
+data$date_updated<-lubridate::ym(data$YearMonth)
 
 #parse out the month and create a new field called month 
 data$month<-month(data$date_updated)
