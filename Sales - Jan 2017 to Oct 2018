@@ -10,7 +10,6 @@ library(tidyverse)
 library(lubridate)
 library(zoo)
 
-
 #set working directory
 setwd("D:/IHS Sales & Supply Dashboard/IHS_Files (Sales Data)")
 
@@ -20,14 +19,21 @@ setwd("D:/IHS Sales & Supply Dashboard/IHS_Files (Sales Data)")
 #read data 
 data <- fread("US_MSFT_New_Used_Registrations_Oct2018_Dec2018.txt")
 
-#create new data field called YearMonth
-data$YearMonth <- sub("(-{4})(-*)", "\\1-\\2", data$REPORT_YEAR_MONTH)
+
+
+
+
+
+
+##create new data field called YearMonth
+data$YearMonth <- sub("(.{4})(-*)", "\\1-\\2", data$REPORT_YEAR_MONTH)
 
 #identify Year and Month
 data$YearMonth <- as.yearmon(data$YearMonth, "%Y-%m")
 
 #add date
-data$YearMonth <- as.Date(paste0("01-", data$YearMonth),format = "%d-%Y-%m")
+data$YearMonth <- as.yearmon(data$YearMonth, "%m/%Y")
+data$YearMonth <- as.Date(as.yearmon(data$YearMonth, "%m/%Y"))
 
 #parse out the month and create a new field called month 
 data$month<-month(data$YearMonth)
