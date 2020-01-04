@@ -1,0 +1,55 @@
+#Install Packages
+install.packages("data.table")
+install.packages("tidyverse")
+install.packages("lubridate")
+
+#call packages
+library(data.table)
+library(tidyverse)
+library(lubridate)
+
+
+#set working directory
+setwd("D:/IHS Sales & Supply Dashboard/IHS_Files (Sales Data)")
+
+
+########### Main Instructions #############
+
+#read data 
+data <- fread("US_MSFT_New_Used_Registrations_Oct2018_Dec2018.txt")
+
+#reduce file size 
+data_condensed<-head(data,100)
+
+#remove big data file 
+rm(data)
+
+#create new data field called YearMonth
+data_condensed$YearMonth <- sub("(-{4})(-*)", "\\1-\\2", data_condensed$REPORT_YEAR_MONTH)
+
+#identify Year and Month
+as.yearmon(data_condensed$YearMonth, "%Y-%m")
+
+#add date
+data_condensed$date_updated <- as.Date(paste0("01-", data_condensed$YearMonth),format = "%d-%Y-%m")
+
+#use lubridate package to create a date field called date_updated
+data_condensed$date_updated<-lubridate::dym(data_condensed$YearMonth)
+
+#parse out the month and create a new field called month 
+data_condensed$month<-month(data_condensed$YearMonth)
+
+#parse out the year and create a new field called year
+data_condensed$year <- year(data_condensed$YearMonth)
+
+
+###### January 2017 #####
+
+#filter based on month using the month column 
+jan17_data<-filter(data, month == 1 & year == 2017)
+
+#remove new columns
+jan17_data[c(31:33)] <- list(NULL)
+
+#write to text
+write.table(jan17_data, "US_MSFT_New_Used_Registrations_Jan2017.txt", row.names = FALSE )
